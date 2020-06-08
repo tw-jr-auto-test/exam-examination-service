@@ -11,6 +11,7 @@ plugins {
 	id 'org.springframework.boot' version '2.3.0.RELEASE'
 	id 'io.spring.dependency-management' version '1.0.9.RELEASE'
 	id 'java'
+	id "org.flywaydb.flyway" version "6.4.3"
 }
 
 apply plugin: 'spring-cloud-contract'
@@ -71,4 +72,11 @@ contracts {
 
 test {
 	useJUnitPlatform()
+}
+
+
+flyway {
+	url = 'jdbc:h2:file:./db/exam_quiz'
+	user = 'sa'
+	password = ''
 }
