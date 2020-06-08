@@ -12,7 +12,7 @@ public class ExaminationApplicationService {
     private final ExaminationRepository examinationRepository;
 
     public ExaminationId create(final CreateExaminationCommand command) {
-        var examination = Examination.create(command.getPaperId(), command.getStartDate());
+        Examination examination = Examination.create(command.getPaperId(), command.getStartDate());
         examinationRepository.save(examination);
         return examination.getId();
     }

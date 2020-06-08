@@ -23,7 +23,7 @@ public class MemoryExaminationRepository implements ExaminationRepository {
 
     @Override
     public void save(final Examination examination) {
-        var existed = examinations.stream().anyMatch(e -> e.equals(examination));
+        boolean existed = examinations.stream().anyMatch(e -> e.equals(examination));
         if (existed) {
             examinations.stream().filter(e -> e.equals(examination)).forEach(
                     o -> {

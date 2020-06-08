@@ -1,13 +1,11 @@
 package com.thoughtworks.exam.examination.adapter.api;
 
-import com.thoughtworks.examonline.examcontext.application.CreateExaminationCommand;
-import com.thoughtworks.examonline.examcontext.application.ExaminationApplicationService;
+import com.thoughtworks.exam.examination.application.CreateExaminationCommand;
+import com.thoughtworks.exam.examination.application.ExaminationApplicationService;
+import com.thoughtworks.exam.examination.domain.model.examination.ExaminationId;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
-/**
- * @author gitqh
- */
 @RestController
 @RequestMapping("/examinations")
 public class ExaminationController {
@@ -17,7 +15,7 @@ public class ExaminationController {
     @ResponseBody
     @ResponseStatus(HttpStatus.CREATED)
     public ExaminationDto create(@RequestBody final CreateExaminationCommand command) {
-        var examinationId = examinationApplicationService.create(command);
+        ExaminationId examinationId = examinationApplicationService.create(command);
         return ExaminationDto.from(examinationId.toString());
     }
 }

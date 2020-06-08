@@ -5,9 +5,6 @@ import lombok.Getter;
 
 import java.time.LocalDate;
 
-/**
- * @author gitqh
- */
 @Getter
 @AllArgsConstructor
 public class CreateExaminationCommand {
