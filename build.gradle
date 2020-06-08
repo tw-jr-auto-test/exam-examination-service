@@ -76,7 +76,7 @@ test {
 
 
 flyway {
-	url = 'jdbc:h2:file:./db/exam_quiz'
+	url = 'jdbc:h2:file:./db/exam_examination'
 	user = 'sa'
 	password = ''
 }
