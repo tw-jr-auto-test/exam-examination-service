@@ -9,7 +9,7 @@ import org.springframework.stereotype.Service;
 @Service
 @AllArgsConstructor
 public class ExaminationApplicationService {
-    private final ExaminationRepository examinationRepository;
+    private ExaminationRepository examinationRepository;
 
     public ExaminationId create(final CreateExaminationCommand command) {
         Examination examination = Examination.create(command.getPaperId(), command.getStartDate());

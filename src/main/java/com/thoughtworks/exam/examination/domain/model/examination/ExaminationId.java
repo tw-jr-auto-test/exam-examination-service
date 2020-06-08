@@ -16,4 +16,9 @@ public class ExaminationId extends AbstractId {
     public static ExaminationId generate() {
         return new ExaminationId("exam-" + UUID.randomUUID().toString());
     }
+
+    @Override
+    public String toString() {
+        return getValue();
+    }
 }

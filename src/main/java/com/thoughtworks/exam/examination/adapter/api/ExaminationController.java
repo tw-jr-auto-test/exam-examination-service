@@ -9,10 +9,13 @@ import org.springframework.web.bind.annotation.*;
 @RestController
 @RequestMapping("/examinations")
 public class ExaminationController {
-    private ExaminationApplicationService examinationApplicationService;
+    private final ExaminationApplicationService examinationApplicationService;
+
+    public ExaminationController(ExaminationApplicationService examinationApplicationService) {
+        this.examinationApplicationService = examinationApplicationService;
+    }
 
     @PostMapping
-    @ResponseBody
     @ResponseStatus(HttpStatus.CREATED)
     public ExaminationDto create(@RequestBody final CreateExaminationCommand command) {
         ExaminationId examinationId = examinationApplicationService.create(command);
